@@ -1,0 +1,31 @@
+Aplikasi Pencatatan Inventaris Barang Berbasis Web  - Free Source Code. Untuk dapat memaksimalkan penggunaan aplikasi ini disarankan menggunakan web server  versi 7. Untuk mendowload Source Code silahkan klik link berikut ini 
+
+https://www.putraritoyan.top/2021/07/...
+
+
+Aplikasi ini terdiri dari dua level pengguna, yaitu admin dan   user 
+Level Admin 
+User : admin
+Password : 123456
+
+Level User
+User : user
+Password : 123456
+
+Aplikasi ini didesain menggunakan php 7, apabila menggunakan php 8 tentunya ada perbedaan seperti ini 
+fatal error: cannot redeclare str_contains() in c:\xampp\htdocs\jurnalmengajar\helpers\functions.php on line 524 ketika dijalankan
+
+untuk mengatasi permasalahan tersebut bagi pengguna yang menggunakan web server versi 8 atau php 8 silahkan ubah file yang ada C:\xampp\htdocs\jurnalmengajar\helpers\Functions.php
+
+kemudian baris code pada baris 524 
+function str_contains($needle, $haystack)
+{
+ return strpos($haystack, $needle) !== false;
+}
+
+dirubah menjadi 
+
+error_reporting(0);
+if (strpos($haystack, $needle) !== false) {
+  echo ''; 
+}
